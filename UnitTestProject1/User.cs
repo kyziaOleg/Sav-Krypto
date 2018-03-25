@@ -12,7 +12,7 @@ namespace UnitTestProject1
         [Test]
         public void User_isNotNull()
         {
-            User user = new User();          
+            KryptoInterface.MyModel.User user = new KryptoInterface.MyModel.User();          
             Assert.IsNotNull(user);
         }
     }

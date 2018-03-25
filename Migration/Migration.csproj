@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KryptoInterfaceStand2\KryptoInterfaceStand2.csproj" />
+    <ProjectReference Include="..\UnitTestProject1\TestKryptoInterfaceStand2.csproj" />
   </ItemGroup>
 
 </Project>
