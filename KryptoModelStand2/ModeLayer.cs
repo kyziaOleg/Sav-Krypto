@@ -9,10 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Ninject;
 using KryptoInterface.Model;
+using KryptoInterfaceStand2.Model;
 
 namespace KryptoModel
 {
-    public class ModeLayer : ModulInject , IModeLayer
+    public class ModeLayer : ModulComand , IModeLayer
     {
 
         public ModeLayer(IModul  modul):base(modul)

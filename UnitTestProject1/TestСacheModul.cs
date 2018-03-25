@@ -16,14 +16,19 @@ namespace UnitTestProject1
         [Test]
         public void CreatСacheModul()
         {
-            СacheModul сacheModul = new СacheModul(null);
+            FaceRepository repository = new FaceRepository();
+            СacheModul сacheModul = new СacheModul(repository);
 
-            сacheModul.GetEntity();
+            
 
-        //    IComondModul<IUser> comond1 = new ComondMudul<IUser>();
-        //   IComondModul<IMyEntity> comondModul= сacheModul.GetComondModul(typeof(User), TypeComond.Get, null);
+            for (int i = 0; i < 5; i++)
+            {
+                IComondModul<IMyEntity> comondGet = сacheModul.Сommand(comondModul.GetComond(typeof(IUser), TypeComond.Get, null));
 
-            //  IComondModul<IMyEntity> comond = сacheModul.Сommand(comondModul);
+            }
+
+
+            Assert.AreEqual(1, repository.amount(TypeComond.Get));
 
         }
     }

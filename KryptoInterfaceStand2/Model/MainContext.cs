@@ -31,24 +31,14 @@ namespace KryptoRepositoryLayer.Context
            //  Database.EnsureDeleted();
             // Database.EnsureCreated();
 
-            ((IList<IQueryable<IMyEntity>>)ВсеТаблици).Add(UserDates);
-            IComondModul<IUser> comond1 = new ComondModul<IUser>();
-
+            ((IList<IQueryable<IMyEntity>>)ВсеТаблици).Add(UserDates);         
             ((IList<IQueryable<IMyEntity>>)ВсеТаблици).Add(WebIPes);
-            IComondModul<IWebIP> comond2 = new ComondModul<IWebIP>();
+            
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           // String положdll = Assembly.GetExecutingAssembly().Location;
-          //  int полож = положdll.IndexOf("Saving Krypto");
-          //  String положdll2 = положdll.Remove(полож + 14)+ @"LocalState\";
-
-            string path =  @"F:\WpSystem\S-1-5-21-370286678-2946152013-3708458161-1000\AppData\Local\Packages\b6a529cb-95bd-4bb5-bf63-92996cdd3844_4veyfjz7wws78\LocalState\"+ filename + ".db";
-
-          //  string path = положdll2 + filename + ".db";
-            optionsBuilder.UseSqlite($"Filename={path}");
-          //  optionsBuilder.UseSqlite($"Data Source={path}\\{filename}.db");
-
+            string path =  @"F:\WpSystem\S-1-5-21-370286678-2946152013-3708458161-1000\AppData\Local\Packages\b6a529cb-95bd-4bb5-bf63-92996cdd3844_4veyfjz7wws78\LocalState\"+ filename + ".db";      
+            optionsBuilder.UseSqlite($"Filename={path}");        
         }
 
         public DbSet<User> UserDates { get; set; }

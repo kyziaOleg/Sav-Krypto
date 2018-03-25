@@ -22,7 +22,11 @@ namespace Migration
         }
         public static void StartTest()
         {
+            //  TestСacheModul testСacheModul = new TestСacheModul();
+            //  testСacheModul.CreatСacheModul();
 
+            TestUser testUser = new TestUser();
+            testUser.User_isNotNull();
         }
 
 
