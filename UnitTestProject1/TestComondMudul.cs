@@ -20,6 +20,7 @@ namespace UnitTestProject1
             IComondModul<IMyEntity> comondcPrototip2 = comondModul.GetComond(typeof(User), TypeComond.Save, null);
             Assert.AreEqual(comondcPrototip.TypeModel, typeof(IUser));
             Assert.AreEqual(comondcPrototip2.TypeModel, typeof(IUser));
+
         }
     }
 }

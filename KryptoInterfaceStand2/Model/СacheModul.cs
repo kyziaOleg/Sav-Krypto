@@ -25,12 +25,14 @@ namespace KryptoInterface.Model
         }
         protected override IComondModul<IMyEntity> СommandStart(IComondModul<IMyEntity> comond)
         {
-            if (comond.Action == TypeComond.Get)
+            if (comond.Action == TypeComond.Get && cacheEntity!=null && cacheEntity.Count>0)
             {
-              IList<IMyEntity> entity=  cacheEntity.Where(r => r.GetType() == comond.GetType()).ToList();
+              IEnumerable< IMyEntity> entity = comond.Sort(cacheEntity);
+                
                 if (entity.Count() > 0)
                 {
                     comond.SetAnswer(entity);
+                    
                 }
             }
             return base.СommandStart(comond);

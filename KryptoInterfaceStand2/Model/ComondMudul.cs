@@ -26,6 +26,7 @@ namespace KryptoInterface.Model
         void SetData(IEnumerable<IMyEntity> myEntity);
 
         void Dress(IKernel kernel, Func<string, object, IConstructorArgument> GetConstructorArgument);
+        IEnumerable<IMyEntity> Sort(IEnumerable<IMyEntity> myEntity);
 
     }
    /* public interface IComondModulWrite<in T> where T : IMyEntity
@@ -118,6 +119,10 @@ namespace KryptoInterface.Model
         public void SetData(IEnumerable<IMyEntity> myEntity)
         {
             Data = myEntity.OfType<T>();
+        }
+        public IEnumerable<IMyEntity> Sort(IEnumerable<IMyEntity> myEntity)
+        {
+            return (IEnumerable<IMyEntity>)myEntity.OfType<T>();
         }
         public void Dress(IKernel kernel, Func<string, object,IConstructorArgument> GetConstructorArgument)
         {
