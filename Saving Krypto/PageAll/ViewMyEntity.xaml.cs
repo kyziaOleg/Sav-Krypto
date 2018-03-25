@@ -51,6 +51,8 @@ namespace Saving_Krypto.PageAll
             foreach(Type inter in  Interfaca)
             {
                 Title.Text += inter.Name + ", ";
+
+                //"hallo"
             }
 
 
@@ -67,9 +69,7 @@ namespace Saving_Krypto.PageAll
 
             foreach (PropertyInfo property in properties)
             {
-              
-                
-              
+                                   
                 if (!property.CanRead)
                 {
                     continue;

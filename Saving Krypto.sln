@@ -16,9 +16,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoModelStand2", "Krypto
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoRepositoryStand2", "KryptoRepositoryStand2\KryptoRepositoryStand2.csproj", "{BE925821-5EE0-485B-B00E-AB83A42A08F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKryptoInterfaceStand2", "C:\Users\Олег\Documents\Visual Studio 2015\Projects\UnitTestProject1\UnitTestProject1\TestKryptoInterfaceStand2.csproj", "{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoWebUI", "KryptoWebUI\KryptoWebUI.csproj", "{086986C1-B15A-43EA-9FF1-128A778031D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptoWebUI", "KryptoWebUI\KryptoWebUI.csproj", "{086986C1-B15A-43EA-9FF1-128A778031D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKryptoInterfaceStand2", "UnitTestProject1\TestKryptoInterfaceStand2.csproj", "{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,22 +116,6 @@ Global
 		{BE925821-5EE0-485B-B00E-AB83A42A08F0}.Release|x64.Build.0 = Release|Any CPU
 		{BE925821-5EE0-485B-B00E-AB83A42A08F0}.Release|x86.ActiveCfg = Release|Any CPU
 		{BE925821-5EE0-485B-B00E-AB83A42A08F0}.Release|x86.Build.0 = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|ARM.Build.0 = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x64.Build.0 = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x86.Build.0 = Debug|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|ARM.ActiveCfg = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|ARM.Build.0 = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x64.ActiveCfg = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x64.Build.0 = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x86.ActiveCfg = Release|Any CPU
-		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x86.Build.0 = Release|Any CPU
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -148,6 +132,22 @@ Global
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Release|x64.Build.0 = Release|Any CPU
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{086986C1-B15A-43EA-9FF1-128A778031D3}.Release|x86.Build.0 = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|ARM.Build.0 = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x64.Build.0 = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Debug|x86.Build.0 = Debug|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|ARM.ActiveCfg = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|ARM.Build.0 = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x64.ActiveCfg = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x64.Build.0 = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x86.ActiveCfg = Release|Any CPU
+		{C4390D3D-4DCE-4DDE-8C6D-A69F433BF330}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
