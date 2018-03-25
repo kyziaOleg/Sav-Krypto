@@ -42,7 +42,7 @@
   <ItemGroup>
     <Reference Include="KryptoInterfaceStand2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>F:\Проекты\Учебные\Тэсты\Saving Krypto\KryptoInterfaceStand2\bin\Debug\netstandard2.0\KryptoInterfaceStand2.dll</HintPath>
+      <HintPath>..\KryptoInterfaceStand2\bin\Debug\netcoreapp2.0\KryptoInterfaceStand2.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.10.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>F:\Проекты\Учебные\Тэсты\Saving Krypto\packages\NUnit.3.10.1\lib\net45\nunit.framework.dll</HintPath>
@@ -58,6 +58,9 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="FaceRepository.cs" />
+    <Compile Include="TestComondMudul.cs" />
+    <Compile Include="TestСacheModul.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

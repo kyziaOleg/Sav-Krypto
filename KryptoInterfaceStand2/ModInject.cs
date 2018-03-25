@@ -1,5 +1,6 @@
 ﻿using KryptoInterface.Interface;
 using KryptoInterface.Model;
+using KryptoInterfaceStand2.Model;
 using Ninject;
 using Ninject.Modules;
 using Ninject.Parameters;

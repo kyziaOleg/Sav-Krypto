@@ -1,4 +1,5 @@
 ﻿using KryptoInterface.Interface;
+using KryptoInterface.MyModel;
 using Ninject;
 using Ninject.Parameters;
 using System;
@@ -25,9 +26,10 @@ namespace KryptoInterface.Model
         void SetData(IEnumerable<IMyEntity> myEntity);
 
         void Dress(IKernel kernel, Func<string, object, IConstructorArgument> GetConstructorArgument);
+        IEnumerable<IMyEntity> Sort(IEnumerable<IMyEntity> myEntity);
 
     }
-    public interface IComondModulWrite<in T> where T : IMyEntity
+   /* public interface IComondModulWrite<in T> where T : IMyEntity
     {
         TypeComond Action { get; }
         Type TypeModel { get; }
@@ -46,29 +48,66 @@ namespace KryptoInterface.Model
 
 
 
-    }
+    }*/
     public enum TypeComond { Сreate, Get , Remove, Save, GetTable};
     public enum TypeVisit {All, FirstAnswer };
 
 
-    public class ComondMudul
+    public abstract class comondModul
     {
-      protected  static IList<IComondModul<IMyEntity>> comond = new List<IComondModul<IMyEntity>>();
+         static IList<IComondModul<IMyEntity>> comond = new List<IComondModul<IMyEntity>>();
 
+        static comondModul()
+        {
+            SaveComond(new ComondModul<IMyEntity>());
+            SaveComond(new ComondModul<IUser>());
+            SaveComond(new ComondModul<IWebIP>());
+        }
+        
+        protected static void SaveComond(IComondModul<IMyEntity> newcomond)
+        {
+            Type type = newcomond.TypeModel;
+            if (comond.Where(r => r.TypeModel == type).Count()==0)
+            {
+                SetAllComonds(newcomond);
+            }
+        }
+       static object synccomond = new object();
+        static void SetAllComonds(IComondModul<IMyEntity> newcomond)
+        {
+            IList<IComondModul<IMyEntity>> dubl = comond.ToList();
+            dubl.Add(newcomond);
+
+            lock (synccomond)
+            {
+                comond = dubl;
+            }
+
+        }
+        public static IComondModul<IMyEntity> GetComond(Type type, TypeComond action, IEnumerable<IMyEntity> date)
+        {
+            IComondModul<IMyEntity> como = comond.Where(r => type.GetInterfaces().Contains(r.TypeModel) || (r.TypeModel == type && !r.TypeModel.IsClass)).LastOrDefault();
+
+            if (como != null)
+            {
+                return como.Clone(action, date);
+            }
+            throw new Exception($"Тип {type.Name} не зарегистрирован для команд");
+        }
     }
 
 
-    public class ComondMudul<T> : ComondMudul,  IComondModul<T>, IComondModulWrite<T> where T : IMyEntity
+    public class ComondModul<T> : comondModul,  IComondModul<T>/*, IComondModulWrite<T>*/ where T : IMyEntity
     {
         
-        public ComondMudul(TypeComond action, IEnumerable<T> date)
+        public ComondModul(TypeComond action, IEnumerable<T> date): this()
         {
             Action = action;
             Data = date;
         }
-        public ComondMudul()
+        public ComondModul()
         {
-            comond.Add((IComondModul<IMyEntity>)this);
+            SaveComond((IComondModul<IMyEntity>)this);
         }
         public TypeComond Action { get;  }
         public Type TypeModel => typeof(T);
@@ -80,6 +119,10 @@ namespace KryptoInterface.Model
         public void SetData(IEnumerable<IMyEntity> myEntity)
         {
             Data = myEntity.OfType<T>();
+        }
+        public IEnumerable<IMyEntity> Sort(IEnumerable<IMyEntity> myEntity)
+        {
+            return (IEnumerable<IMyEntity>)myEntity.OfType<T>();
         }
         public void Dress(IKernel kernel, Func<string, object,IConstructorArgument> GetConstructorArgument)
         {
@@ -95,27 +138,7 @@ namespace KryptoInterface.Model
         public IEnumerable<ITable> Metadata { get; set; }
 
 
-        public static IComondModul<IMyEntity> GetComond(Type type, TypeComond action, IEnumerable<IMyEntity> date)
-        {
 
-
-
-
-            IComondModul<IMyEntity> como = comond.Where(r => type.GetInterfaces().Contains(r.TypeModel) || r.TypeModel == type).FirstOrDefault();
-
-            if(como == null && typeof(IMyEntity)== type)
-            {
-
-                como = comond.First();
-            }
-
-
-            if (como != null)
-            {
-                return como.Clone(action, date);
-            }
-            throw new Exception($"Тип {type.Name} не зарегистрирован для команд");
-        }
 
         public IComondModul<IMyEntity> Clone(TypeComond action, IEnumerable<IMyEntity> date)
         {
@@ -124,8 +147,7 @@ namespace KryptoInterface.Model
             {
                 date2 = date.OfType<T>();
             }
-
-          return  (IComondModul<IMyEntity>)new ComondMudul<T>(action, date2);
+          return  (IComondModul<IMyEntity>)new ComondModul<T>(action, date2);
         }
 
     }

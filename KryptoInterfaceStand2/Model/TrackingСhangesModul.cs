@@ -49,7 +49,7 @@ namespace KryptoInterface.Model
         }
         void Save()
         {
-            IComondModul<IMyEntity> mudul = new ComondMudul<IMyEntity>(TypeComond.Save, null);
+            IComondModul<IMyEntity> mudul = new ComondModul<IMyEntity>(TypeComond.Save, null);
             Сommand(mudul);
         }
         private void Iter_ChangedEntity(object sender, EventArgs e)
