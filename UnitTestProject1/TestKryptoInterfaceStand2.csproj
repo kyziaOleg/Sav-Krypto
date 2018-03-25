@@ -58,6 +58,8 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="TestComondMudul.cs" />
+    <Compile Include="TestСacheModul.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

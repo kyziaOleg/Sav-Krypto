@@ -32,10 +32,10 @@ namespace KryptoRepositoryLayer.Context
             // Database.EnsureCreated();
 
             ((IList<IQueryable<IMyEntity>>)ВсеТаблици).Add(UserDates);
-            IComondModul<IUser> comond1 = new ComondMudul<IUser>();
+            IComondModul<IUser> comond1 = new ComondModul<IUser>();
 
             ((IList<IQueryable<IMyEntity>>)ВсеТаблици).Add(WebIPes);
-            IComondModul<IWebIP> comond2 = new ComondMudul<IWebIP>();
+            IComondModul<IWebIP> comond2 = new ComondModul<IWebIP>();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

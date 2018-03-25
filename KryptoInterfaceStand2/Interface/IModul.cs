@@ -11,10 +11,5 @@ namespace KryptoInterface.Interface
     public interface IModul
     {
         IComondModul<IMyEntity> Сommand(IComondModul<IMyEntity> comond); 
-
-        IComondModul<IMyEntity> GetComondModul(Type type, TypeComond action, IEnumerable<IMyEntity> date);
-
-        IEnumerable<ITable> GetTable();
-        IEnumerable<IMyEntity> GetEntity(Type type);
     }
 }

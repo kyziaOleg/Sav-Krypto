@@ -59,23 +59,11 @@ namespace KryptoInterface.Model
             NextEternalModul = modul;
         }
 
-        public IEnumerable<ITable> GetTable()
-        {
 
-            IComondModul<IMyEntity> comond = GetComondModul(typeof(IMyEntity), TypeComond.GetTable, null);
-            IEnumerable<ITable> врем = Сommand(comond).Metadata;
-            return врем;
-        }
-        public IEnumerable<IMyEntity> GetEntity(Type type)
+       /* public IComondModul<IMyEntity> GetComondModul(Type type, TypeComond action, IEnumerable<IMyEntity> date) 
         {
-            IComondModul<IMyEntity> comond = GetComondModul(type, TypeComond.Get, null);
-            IEnumerable<IMyEntity> врем = Сommand(comond).Answer;
-            return врем;
-        }
-        public IComondModul<IMyEntity> GetComondModul(Type type, TypeComond action, IEnumerable<IMyEntity> date) 
-        {
-            return  ComondMudul<IMyEntity>.GetComond(type, action, date); //Идинственое место где должен сождоваться модуль команд
-        }
+            return  ComondModul<IMyEntity>.GetComond(type, action, date); 
+        }*/
 
         protected virtual IComondModul<IMyEntity> СommandStart(IComondModul<IMyEntity> comond) 
         {
