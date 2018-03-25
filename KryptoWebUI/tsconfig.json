@@ -1,0 +1,25 @@
+
+// документация по файлу tconfig.json http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+{
+  "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true, // Workaround for https://github.com/angular/angular/issues/17863. Remove this if you upgrade to a fixed version of Angular.
+    "strict": true,
+    "lib": [ "es2015", "dom" ],
+    "typeRoots": [
+      "node_modules/@types/",
+      "systemjs.config"
+    ]
+  },
+  "exclude": ["bin","node_modules", "wwwroot" ],
+  "atom": { "rewriteTsconfig": false }
+}

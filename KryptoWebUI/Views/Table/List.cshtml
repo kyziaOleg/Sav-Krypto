@@ -1,0 +1,9 @@
+﻿@model IEnumerable<IMyEntity>
+
+@foreach (IMyEntity Entity in Model)
+{
+    <div>
+        <h3> @Entity.ToString() </h3>
+    </div>
+
+}

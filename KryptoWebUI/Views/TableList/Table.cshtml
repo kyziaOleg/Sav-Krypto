@@ -1,0 +1,10 @@
+﻿@model IEnumerable<IMyEntity>
+
+@foreach (IMyEntity Entity in Model)
+{
+<div>
+    <a asp-controller="Table" asp-action="Entity" asp-route-type=@Entity.GetType() asp-route-Id=@Entity.Id ><h3>@Entity.ToString()</h3></a>    
+</div>
+    
+
+}

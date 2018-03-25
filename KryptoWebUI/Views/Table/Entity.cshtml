@@ -1,0 +1,21 @@
+﻿@model IMyEntity
+<div>
+    <h3> @Model.ToString() </h3>
+
+    @foreach (System.Reflection.PropertyInfo prop in Model.GetType().GetProperties())
+    {
+    <p>
+        <label> @prop.Name  </label>
+        <input value=" @prop.GetValue(Model)" asp-for="@prop.Name" disabled="disabled" />
+
+        @if (prop.CanWrite)
+        {
+
+            <buttot>Edit</buttot>
+        }
+    </p>
+    }
+
+</div>
+
+

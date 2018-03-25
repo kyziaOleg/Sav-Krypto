@@ -1,0 +1,8 @@
+﻿@model IEnumerable<ITable>
+@foreach(var p in Model)
+{
+    <div>
+        <a  asp-action="Table"  asp-route-type=@p.TypeEntity.Name><h3>@p.TypeEntity.Name</h3></a>   
+    </div>
+
+}

@@ -1,0 +1,58 @@
+﻿using KryptoInterface.Interface;
+using KryptoInterface.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace KryptoInterface.MyModel
+{
+    public class User : MyEntity, IUser
+    {
+
+        public User() : base(null)
+        {
+        }
+        public User(IUser user) : base(user)
+        {
+
+        }
+
+        string name;
+        public virtual string Name
+        {
+            get => name;
+            set
+            {
+                value = TryChangProperty(value, name, nameof(Name));
+                if (name != value)
+                {
+                    name = value;
+                    OnChangedEntity(nameof(Name));
+                }
+            }
+        }
+
+        string password;
+        public virtual string Password
+        {
+            get => password;
+            set
+            {
+                value = TryChangProperty(value, password, nameof(Password));
+                if (password != value)
+                {
+                    password = value;
+                    OnChangedEntity(nameof(Password));
+                }
+            }
+        }
+        public override string ToString()
+        {
+             return Name ?? base.ToString();
+        }
+
+
+    }
+}
